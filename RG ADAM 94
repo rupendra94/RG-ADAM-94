@@ -1,0 +1,124 @@
+# RG-ADAM-94
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RG ADAM 94</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #0f0f0f; color: #fff; transition: background 0.3s, color 0.3s; }
+    header { background: #1c1c1c; padding: 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 2.5em; }
+    nav { text-align: center; margin: 20px 0; }
+    nav a { margin: 0 15px; color: #00eaff; text-decoration: none; font-weight: bold; }
+    section { padding: 40px 20px; max-width: 1000px; margin: auto; }
+    .hero { text-align: center; animation: fadeIn 2s ease; }
+    .hero img { width: 300px; border-radius: 20px; box-shadow: 0 0 20px #00eaff; }
+    .gallery img { width: 100%; max-width: 300px; margin: 10px; border-radius: 10px; }
+    .contact-form { max-width: 500px; margin: auto; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: none; border-radius: 5px; }
+    .contact-form button { padding: 10px 20px; background: #00eaff; border: none; color: #000; font-weight: bold; border-radius: 5px; cursor: pointer; }
+    .lang-switch, .theme-toggle { text-align: center; margin-top: 10px; }
+    .lang-switch button, .theme-toggle button { background: none; border: 1px solid #00eaff; color: #00eaff; padding: 5px 10px; cursor: pointer; margin: 0 5px; }
+    .dark { background: #0f0f0f; color: #fff; }
+    .light { background: #f4f4f4; color: #000; }
+    .light header, .light nav { background: #e0e0e0; }
+    .blog-post { margin-bottom: 20px; border-left: 5px solid #00eaff; padding-left: 15px; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="dark">
+  <header>
+    <h1>RG ADAM 94</h1>
+    <p>Your world of gaming, music, and entertainment</p>
+    <div class="lang-switch">
+      <button onclick="setLanguage('en')">English</button>
+      <button onclick="setLanguage('hi')">हिन्दी</button>
+    </div>
+    <div class="theme-toggle">
+      <button onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#videos">Videos</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </nav>  <section id="home" class="hero">
+    <img src="legendary-adam.jpg" alt="Legendary Adam" />
+    <h2>Welcome to RG ADAM 94</h2>
+    <p>Explore gaming, facts, anime, and music – sab kuch ek jagah!</p>
+  </section>  <section id="about">
+    <h2>About RG ADAM 94</h2>
+    <p>RG ADAM 94 ek multi-content platform hai jahan aapko milega gaming, anime facts, music aur entertainment ka combo. Hum sabhi ke liye kuch na kuch lekar aate hain.</p>
+  </section>  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="legendary-adam.jpg" alt="Artwork 1" />
+    </div>
+  </section>  <section id="videos">
+    <h2>Videos</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+  </section>  <section id="blog">
+    <h2>Blog</h2>
+    <div class="blog-post">
+      <h3>Gaming Tips for Free Fire Max</h3>
+      <p>Learn the best strategies and loadouts to dominate in Free Fire Max!</p>
+    </div>
+    <div class="blog-post">
+      <h3>Anime Facts: Hidden Truths</h3>
+      <p>Explore unknown facts about your favorite anime characters and series.</p>
+    </div>
+  </section>  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-form">
+      <input type="text" placeholder="Your Name" />
+      <input type="email" placeholder="Your Email" />
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button>Send</button>
+    </div>
+  </section>  <script>
+    const translations = {
+      hi: {
+        home: "होम",
+        about: "हमारे बारे में",
+        gallery: "गैलरी",
+        videos: "वीडियो",
+        contact: "संपर्क करें",
+        blog: "ब्लॉग",
+        welcome: "RG ADAM 94 में आपका स्वागत है",
+        explore: "गेमिंग, फैक्ट्स, एनीमे और म्यूजिक का अनुभव करें – सब कुछ एक जगह!"
+      },
+      en: {
+        home: "Home",
+        about: "About",
+        gallery: "Gallery",
+        videos: "Videos",
+        contact: "Contact",
+        blog: "Blog",
+        welcome: "Welcome to RG ADAM 94",
+        explore: "Explore gaming, facts, anime, and music – all in one place!"
+      }
+    };
+
+    function setLanguage(lang) {
+      document.querySelector('nav a[href="#home"]').textContent = translations[lang].home;
+      document.querySelector('nav a[href="#about"]').textContent = translations[lang].about;
+      document.querySelector('nav a[href="#gallery"]').textContent = translations[lang].gallery;
+      document.querySelector('nav a[href="#videos"]').textContent = translations[lang].videos;
+      document.querySelector('nav a[href="#contact"]').textContent = translations[lang].contact;
+      document.querySelector('nav a[href="#blog"]').textContent = translations[lang].blog;
+      document.querySelector(".hero h2").textContent = translations[lang].welcome;
+      document.querySelector(".hero p").textContent = translations[lang].explore;
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle("light");
+      document.body.classList.toggle("dark");
+    }
+  </script></body>
+</html>
